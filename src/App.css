@@ -1,4 +1,38 @@
 .title-container-header {
     font-family: 'Libre Baskerville', serif;
+    background-color: #4B88A2;
+    margin-top: 0px;
+    padding:  10px 0 15px 30px;
   }
-  
+
+  .form {
+      display: flex;
+      justify-content: baseline;
+      grid-template-columns: 20px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      margin-right: 30px;
+      height: 30px
+      
+  }  
+
+  .header {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #4B88A2;
+    background-color: #4B88A2;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    background-image: url("../src/icon.jpg");
+    background-repeat: no-repeat;
+    width: 100px;
+    height:72px;
+  }
+
+  .title-logo {
+    display: flex;
+    justify-content: center;
+  }
