@@ -5,7 +5,7 @@ class Title extends React.Component {
         return (
             <div className="title-logo">
                 <div className="logo"></div>
-                <h1 className="title-container-header">United Weather</h1>
+                <h1 className="title-header">UnitedWeather.</h1>
             </div>
         )
     }
