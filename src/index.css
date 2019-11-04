@@ -1,5 +1,6 @@
 body {
-  background-color: #4B88A2;
+  background-image: url(../src/landscape.jpg);
+  background-repeat: no-repeat;
   margin: 0;
   padding: 0;
   font-family: sans-serif; 

@@ -1,4 +1,6 @@
-
+.title-container-header {
+  font-size: 1.4em;
+}
 
   .form {
       display: grid;
@@ -18,23 +20,24 @@
   .logo {
     display: flex;
     justify-content: center;
-    background-image: url("../src/icon.jpg");
+    background-image: url("../src/logo.png");
     background-repeat: no-repeat;
     width: 100px;
-    height:72px;
+    height:80px;
+    border: 1px solid black;
   }
 
   .title-logo {
-    background-image: url(./clouds.jpg);
+    background-color: #8A9B68;
     font-family: 'Libre Baskerville', serif;
     background-repeat: no-repeat;
     background-size: 100%;
     display: flex;
     justify-content: center;
-    background-color: #4B88A2;
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
+    border-bottom: 3px solid #252627;
   }
 
   .weather__error {
@@ -43,8 +46,10 @@
   }
 
   .weather-info {
-    display: flex;
+    display: grid;
     justify-content: center;
+    padding-top: 80px;
+    font-family: 'Libre Baskerville', serif;
   }
 
   .weather {
@@ -53,26 +58,40 @@
   }
 
   .btn {
-    font-size: 1em;
+    font-family: 'Libre Baskerville', serif;
+    font-size: .8em;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    margin-left: 50px;
-    width: 70px;
+    width: 50%;
     border-radius: 5px;
+    border: 2px solid #252627;
+    box-shadow: 10px;
+    
+    
   }
 
   .inputs {
-    background-color: #4B88A2;
+    /* background-color: #4B88A2; */
     border: none;
-    padding: 10px;
     margin: 10px;
+    font-family: 'Libre Baskerville', serif;
+    border: 2px solid #252627;
+    border-radius: 5px;
+    padding: 5px;
   }
 
   ::placeholder {
     font-size: 1em;
     color: #252627;
     font-family: 'Libre Baskerville', serif;
-    text-align: center;
-    text-decoration: underline;
+    border-radius: 5px;
+    
   }
+
+  .submit {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+
