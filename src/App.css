@@ -79,20 +79,17 @@
     justify-content: center;
     width: 50%;
     border-radius: 5px;
-    border: 2px solid #252627;
-    box-shadow: 10px;
-    background-color: #8A9B68;
-    
-    
+    border-bottom: 2px solid #252627;
+    background-color: transparent;
   }
 
   .inputs {
-    background-color: #8A9B68;
+    background-color: transparent;
     border: none;
     margin: 10px;
     font-family: 'Libre Baskerville', serif;
-    border: 2px solid #252627;
-    border-radius: 5px;
+    border-bottom: 2px solid #252627;
+    border-radius: 1px;
     padding: 5px;
   }
 
