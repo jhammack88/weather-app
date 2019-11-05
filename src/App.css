@@ -34,6 +34,7 @@
   padding: 20px 20px 0 20px;
   height: 300px;
   width: 30vw;
+  border: 1px solid black;
   
 }
 
@@ -47,13 +48,14 @@
   font-weight: 700;
   height: 20px;
   width: 30vw;
+  
 }
 
 .content-input {
   font-family: 'Libre Baskerville', serif;
   font-size: 1em;
   font-weight: 700;
-  
+  padding-bottom: 25px;
   width: 30vw;
 }
 
@@ -82,26 +84,35 @@
 }
 
 .inputs {
+  opacity: .9;
+  font-weight: 1000;
+  color: black;
   font-size: 1em;
   font-family: 'Libre Baskerville', serif;
   padding: 15px;
   height: 15px;
   width: 15vw;
+  background-color: #8A9B68;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .weather-submit {
   display: flex;
   justify-content: center;
   height: 20px;
+  margin-bottom: 25px;
 }
 
 .weather-btn {
   font-family: 'Libre Baskerville', serif;
   font-size: 1em;
   height: 25px;
-  border: none;
+  border: 1px solid black;
   border-radius: 5px;
   opacity: .8;
+  background-color: #8A9B68;
 }
 
 .title-logo {
@@ -123,6 +134,29 @@
   margin-top: 0;
   font-size: 2em;
 } 
+
+.form-header {
+  font-family: 'Libre Baskerville', serif;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  height: 0px;
+  font-size: 1.5em;
+}
+
+.weather-info {
+  color: antiquewhite;
+  font-family: 'Libre Baskerville', serif;
+  border-radius: 5px;
+  display: grid;
+  justify-content: center;
+  width: 235px;
+}
+
+.weather__error {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .9em;
+}
 
 
 
