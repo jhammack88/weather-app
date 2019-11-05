@@ -1,19 +1,138 @@
-.title-container-header {
-  font-size: 1.4em;
+ .root {
+   display: flex;
+   justify-content: center;
+ }
+ 
+ .app-container {
+  display: grid;
+  justify-content: center;
+}
+
+.title-bar {
+  background-color: #8A9B68;
+  font-family: 'Libre Baskerville', serif;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 4px solid #252627;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+}
+
+.left-column {
+  display: grid;
+  grid-template-rows: auto;
+  background-color: #8A9B68;
+  opacity: .8;
+  border-radius: 5px;
+  padding: 20px 20px 0 20px;
+  height: 300px;
+  width: 30vw;
+  
+}
+
+.review-form {
+  display: grid;
+}
+
+.title-input {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1em;
+  font-weight: 700;
+  height: 20px;
+  width: 30vw;
+}
+
+.content-input {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1em;
+  font-weight: 700;
+  
+  width: 30vw;
+}
+
+.submit {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  font-family: 'Libre Baskerville', serif;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.right-column {
+  display: grid;
+}
+
+.form {
+  display: grid;
+  margin-right: 250px;
+  /* height: 75px; */
+}
+
+.inputs {
+  font-size: 1em;
+  font-family: 'Libre Baskerville', serif;
+  padding: 15px;
+  height: 15px;
+  width: 15vw;
+}
+
+.weather-submit {
+  display: flex;
+  justify-content: center;
+  height: 20px;
+}
+
+.weather-btn {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1em;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+  opacity: .8;
+}
+
+.title-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  background-image: url("../src/logo.jpg");
+  background-repeat: no-repeat;
+  width: 100px;
+  height:100px;
+  border: 2px solid black;
 }
 
 .title-header {
-  padding-top: 30px;
+  padding-top: 40px;
   margin-bottom: 0;
   margin-top: 0;
-  font-size: 1.7em;
-}
+  font-size: 2em;
+} 
 
+
+
+
+
+
+/* 
   .form {
       display: grid;
       justify-content: center;
-      margin-top: 40px;
-      margin-bottom: 50px;
       height: 30px;
       width: 100%;
       
@@ -24,28 +143,11 @@
     justify-content: space-evenly;
   }
 
-  .logo {
-    display: flex;
-    justify-content: center;
-    background-image: url("../src/logo.jpg");
-    background-repeat: no-repeat;
-    width: 100px;
-    height:100px;
-    border: 2px solid black;
-  }
+ 
 
-  .title-logo {
-    background-color: #8A9B68;
-    font-family: 'Libre Baskerville', serif;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    border-bottom: 4px solid #252627;
-  }
+
+
+  
 
   .weather__error {
     display: grid;
@@ -54,17 +156,19 @@
   }
 
   .weather-info {
-    display: grid;
+    display: flex;
     justify-content: center;
     padding-top: 80px;
     font-family: 'Libre Baskerville', serif;
   }
 
   .weather__key {
-    font-size: 1em;
+    font-weight: 1000;
+    font-size: .8em;
     padding: 10px;
     border-radius: 10px;
     background-color: #8A9B68;
+    opacity: .6;
   }
 
   .weather {
@@ -74,7 +178,7 @@
 
   .btn {
     font-family: 'Libre Baskerville', serif;
-    font-size: .8em;
+    font-size: .5em;
     display: flex;
     justify-content: center;
     width: 50%;
@@ -85,7 +189,6 @@
 
   .inputs {
     background-color: transparent;
-    border: none;
     margin: 10px;
     font-family: 'Libre Baskerville', serif;
     border-bottom: 2px solid #252627;
@@ -102,9 +205,17 @@
   }
 
   .submit {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+   
   }
 
+
+
+
+
+ 
+
+  .right-column {
+    display: grid;
+    justify-content: center;
+  } */
 
