@@ -53,7 +53,6 @@ class App extends React.Component {
           </div>
         <div className="form-wrapper">
           <div className="left-column">
-          <p className="form-header">Leave your comments here!</p>
             <Review />
           </div>
 

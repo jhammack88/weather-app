@@ -1,28 +1,120 @@
 import React from "react";
 
 class Review extends React.Component {
-    constructor(props){
-        super(props)
-
-        this.state = {
-            error: ""
-        }
+    constructor() {
+      super();
+  
+      this.state = {
+        title: [],
+        content: ""
+      };
     }
+  
+    // componentDidMount() {
+    //   fetch("https://localhost:5000")
+    //     .then(response => response.json())
+    //     .then(data => {
+    //       const loadedTitle = [];
+    //       for (const id in data) {
+    //         loadedTitle.push({ id, ...data[id] });
+    //       }
+    //       this.setState({ title: loadedTitle });
+    //     });
+    // }
+  
+    // renderTitle = () => {
+    //   return this.state.title.map(content => {
+    //     return (
+    //       <TodoItem
+    //         key={content.id}
+    //         title={content.title}
+    //         done={content.done}
+    //         id={content.id}
+    //         delete={this.deleteContent}
+    //       />
+    //     );
+    //   });
+    // };
+    handleChange = event => {
+      this.setState({ 
+          [event.target.name]: event.target.value 
+        });
+    };
+    addContent = event => {
+      event.preventDefault();
+      fetch("http://localhost:5000/review", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          title: this.state.title,
+          content: this.state.content
+        })
+      })
+        .then(response => response.json())
+        .then(data =>
+          this.setState({
+            title: [
+              ...this.state.title,
+              { id: data.name, title: this.state.content }
+            ],
+            content: ""
+        
+          })
+        );
+    };
+  
+    deleteContent = id => {
+      fetch(`http://localhost:5000/review/<id>`, {
+        method: "DELETE"
+      }).then(
+        this.setState({
+            title: this.state.title.filter(content => content.id !== id)
+        })
+      );
+    };
+  
     render() {
-        return (
-            <form className="review-form">
-                <textarea className="title-input" type="text" name="title" placeholder="Enter Title Here"/>
-                <textarea className="content-input" type="text" name="content" placeholder="What would you like to say?.."/>
-                <div className="submit">
-                <button type="submit" className="btn">Submit</button>
-                </div>
+      return (
+        <div className="App">
+          <h2>Leave your comment here!</h2>
+          <form className="form-container"onSubmit={this.addContent}>
+            <textarea  onChange={this.handleChange}
+            className="title-input"
+              type="text"
+              placeholder="Enter title here"
+              value={this.state.title}
+              name="title"
+            />
+            <textarea onChange={ this.handleChange} 
+            className="content-input" 
+            type="text" 
+            placeholder="What would you like to say?.."
+            name="content"
+            value={this.state.content}
+            />
+            <button type="submit" className="btn">Submit</button>
+          </form>
                 <div>
-                {this.state.error}
-
+                    {this.state.error}
                 </div>
-            </form>
-        )
-    }
+            </div>
+      );
+      }
 }
 
-export default Review;
+
+    //   return (
+        //             <form className="review-form">
+        //                 <textarea onChange={ (event)=>{ this.setState( title: event.target.value)}} className="title-input" type="text" name="title" placeholder="Enter Title Here"/>
+        //                 <textarea onChange={ (event)=>{ this.setState( title: event.target.value)}} className="content-input" type="text" name="content" placeholder="What would you like to say?.."/>
+        //                 <div className="submit">
+        //                 <button type="submit" className="btn">Submit</button>
+        //                 </div>
+        //                 <div>
+        //                 {this.state.error}
+        
+        //                 </div>
+        //             </form>
+    
+  
+  export default Review;

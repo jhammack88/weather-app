@@ -48,6 +48,7 @@
   font-weight: 700;
   height: 20px;
   width: 30vw;
+  margin-bottom: 10px;
   
 }
 
@@ -55,8 +56,8 @@
   font-family: 'Libre Baskerville', serif;
   font-size: 1em;
   font-weight: 700;
-  padding-bottom: 25px;
-  width: 30vw;
+  padding-bottom: 90px;
+  margin-bottom: 10px;
 }
 
 .submit {
@@ -71,6 +72,7 @@
   border: none;
   border-radius: 5px;
   font-size: 1em;
+  width: 100%;
 }
 
 .right-column {
@@ -80,6 +82,7 @@
 .form {
   display: grid;
   margin-right: 250px;
+  width: 50%;
   /* height: 75px; */
 }
 
@@ -113,6 +116,7 @@
   border-radius: 5px;
   opacity: .8;
   background-color: #8A9B68;
+  width: 15vw;
 }
 
 .title-logo {
@@ -158,6 +162,14 @@
   font-size: .9em;
 }
 
+.form-container {
+  display: grid;
+  justify-content: center;
+  margin-top: 25px;
+}
+.App {
+  align-content: center;
+}
 
 
 
