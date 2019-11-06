@@ -17,14 +17,12 @@ export default class DisplayReviews extends Component {
   //   };
 
   handleShowReviewToggle = () => {
-    if (this.reviewList[0] !== 0) {
-      this.setState({
-        reviewList: []
-      });
-      console.log("toggle works");
-    } else {
+    if (this.state.reviewList[0] === 0) {
       this.getReviews();
-      console.log("toggle is false");
+    } else {
+      this.setState({
+        reviewList: [0]
+      });
     }
   };
 
@@ -45,9 +43,9 @@ export default class DisplayReviews extends Component {
   renderReviews = () => {
     return this.state.reviewList.map(item => {
       return (
-        <div>
-          <h1>{item.title}</h1>
-          <h2>{item.content}</h2>
+        <div className="single-review-wrapper">
+          <div className="review-item-title">{item.title}</div>
+          <div className="review-item-content">{item.content}</div>
         </div>
       );
     });
@@ -69,7 +67,7 @@ export default class DisplayReviews extends Component {
   render() {
     return (
       <div className="reviewfield">
-        <h2>Your Reviews</h2>
+        <h3>Your Reviews</h3>
         {/* <button className="btn" onSubmit={this.handleReviews}> */}
         <button className="btn" onClick={this.handleShowReviewToggle}>
           Reviews
@@ -79,10 +77,7 @@ export default class DisplayReviews extends Component {
           value={this.state.reviewList}
           placeholder="reviewfield"
         ></div>{" "}
-        <div className="review-div">
-          {this.renderReviews()}
-          {/* {this.state.reviewList.this.reviewList === "New Post"} */}
-        </div>
+        <div className="review-div">{this.renderReviews()}</div>
       </div>
     );
   }

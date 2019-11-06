@@ -54,6 +54,7 @@
   height: 20px;
   width: 100%;
   margin-bottom: 10px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.531);
 }
 
 .content-input {
@@ -63,6 +64,7 @@
   padding-bottom: 90px;
   margin-bottom: 10px;
   width: 100%;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.531);
 }
 
 .submit {
@@ -118,10 +120,19 @@
 }
 
 .review-div {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
   width: 100%;
   height: auto;
   background-color: white;
   margin-bottom: 10px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.531);
+}
+
+h3 {
+  font-family: "Libre Baskerville", serif;
 }
 
 .weather-btn {
@@ -191,13 +202,13 @@
   justify-content: center;
 }
 
-h2 {
+/* h2 {
   display: flex;
   justify-content: center;
   font-family: "Libre Baskerville", serif;
   margin-top: 10px;
   margin-bottom: 0px;
-}
+} */
 
 .select {
   width: 100%;
@@ -217,92 +228,23 @@ h2 {
   align-items: center;
 }
 
-/* 
-  .form {
-      display: grid;
-      justify-content: center;
-      height: 30px;
-      width: 100%;
-      
-  }  
+.single-review-wrapper {
+  font-family: "Libre Baskerville", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4px;
+  border-bottom: 1px solid green;
+}
 
-  .header {
-    display: flex;
-    justify-content: space-evenly;
-  }
+.review-item-title {
+  font-size: 1.4em;
+  padding-top: 15px;
+  padding-bottom: 8px;
+}
 
- 
-
-
-
-  
-
-  .weather__error {
-    display: grid;
-    justify-content: center;
-    background-color: #8A9B68;
-  }
-
-  .weather-info {
-    display: flex;
-    justify-content: center;
-    padding-top: 80px;
-    font-family: 'Libre Baskerville', serif;
-  }
-
-  .weather__key {
-    font-weight: 1000;
-    font-size: .8em;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #8A9B68;
-    opacity: .6;
-  }
-
-  .weather {
-    display: flex;
-    justify-content: center;
-  }
-
-  .btn {
-    font-family: 'Libre Baskerville', serif;
-    font-size: .5em;
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    border-radius: 5px;
-    border-bottom: 2px solid #252627;
-    background-color: transparent;
-  }
-
-  .inputs {
-    background-color: transparent;
-    margin: 10px;
-    font-family: 'Libre Baskerville', serif;
-    border-bottom: 2px solid #252627;
-    border-radius: 1px;
-    padding: 5px;
-  }
-
-  ::placeholder {
-    font-size: 1em;
-    color: #252627;
-    font-family: 'Libre Baskerville', serif;
-    border-radius: 5px;
-    
-  }
-
-  .submit {
-   
-  }
-
-
-
-
-
- 
-
-  .right-column {
-    display: grid;
-    justify-content: center;
-  } */
+.review-item-content {
+  padding-bottom: 5px;
+  width: 350px;
+  text-align: center;
+}
