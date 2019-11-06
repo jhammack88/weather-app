@@ -78,11 +78,27 @@
   font-family: "Libre Baskerville", serif;
   height: 25px;
   border: none;
-  border-radius: 5px;
   font-size: 1em;
   margin-top: 10px;
   margin-bottom: 10px;
   width: 90px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+  border: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.94),
+    inset 1.5px 1.5px 8px -1px rgba(255, 255, 255, 0.4);
+}
+
+.btn:active {
+  border: none;
+  transition: 0.01s ease-in-out;
+  border: none;
+  outline: none;
+  box-shadow: -1px -1px 2px 0px rgba(0, 0, 0, 0.9),
+    inset 1px 1px 5px 1px rgba(0, 0, 0, 0.9);
 }
 
 .right-column {
@@ -196,6 +212,7 @@ h3 {
   align-items: center;
   margin-top: 25px;
 }
+
 .App {
   display: flex;
   flex-direction: column;
