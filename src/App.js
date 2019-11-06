@@ -57,6 +57,8 @@ class App extends React.Component {
           </div>
 
           <div className="right-column">
+            <p className="option-select">Please Select an option below</p>
+          <select className="select" number="2" placeholder="Select an option"></select>
             <Form getWeather={this.getWeather}/>
             <Weather className="weather"
             temperature={this.state.temperature}

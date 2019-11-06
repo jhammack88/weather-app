@@ -4,8 +4,8 @@
  }
  
  .app-container {
-  display: grid;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .title-bar {
@@ -13,7 +13,7 @@
   font-family: 'Libre Baskerville', serif;
   display: flex;
   justify-content: space-around;
-  width: 100vw;
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 4px solid #252627;
@@ -21,21 +21,26 @@
 
 .form-wrapper {
   display: flex;
-  justify-content: space-between;
-  margin: 50px;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 50px;
+  align-items: unset;
 }
 
 .left-column {
-  display: grid;
-  grid-template-rows: auto;
+  display: flex;
+  flex-direction: column;
   background-color: #8A9B68;
+  justify-content: center;
   opacity: .8;
   border-radius: 5px;
   padding: 20px 20px 0 20px;
-  height: 300px;
-  width: 30vw;
+  height: 50%;
+  width: 400px;
   border: 1px solid black;
-  
+  min-width: 200px;
 }
 
 .review-form {
@@ -47,7 +52,7 @@
   font-size: 1em;
   font-weight: 700;
   height: 20px;
-  width: 30vw;
+  width: 100%;
   margin-bottom: 10px;
   
 }
@@ -58,47 +63,53 @@
   font-weight: 700;
   padding-bottom: 90px;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 .submit {
   margin-top: 10px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .btn {
+
   font-family: 'Libre Baskerville', serif;
   height: 25px;
   border: none;
   border-radius: 5px;
   font-size: 1em;
-  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90px;
 }
 
 .right-column {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
 }
 
 .form {
-  display: grid;
-  margin-right: 250px;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   /* height: 75px; */
 }
 
-.inputs {
+ .inputs { 
   opacity: .9;
   font-weight: 1000;
   color: black;
-  font-size: 1em;
+  font-size: 15px;
   font-family: 'Libre Baskerville', serif;
-  padding: 15px;
-  height: 15px;
-  width: 15vw;
+  padding: 10px;
   background-color: #8A9B68;
+  margin-bottom: 10px;
   border: 1px solid black;
   border-radius: 5px;
-  margin-bottom: 10px;
 }
 
 .weather-submit {
@@ -116,7 +127,7 @@
   border-radius: 5px;
   opacity: .8;
   background-color: #8A9B68;
-  width: 15vw;
+  width: 50%;
 }
 
 .title-logo {
@@ -163,12 +174,36 @@
 }
 
 .form-container {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: 25px;
 }
 .App {
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  font-family: 'Libre Baskerville', serif;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.select {
+  width: 100%;
+  height: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.option-select {
+  margin: 0;
+  padding: 0;
 }
 
 
