@@ -7,14 +7,15 @@ class Review extends React.Component {
 
     this.state = {
       title: [],
-      content: ""
+      content: "",
+      submitMessage: ""
     };
   }
 
   resetFields = event => {
     this.setState({
       title: "",
-      content: ""
+      content: "Thanks for your submission!"
     });
   };
 
@@ -43,6 +44,7 @@ class Review extends React.Component {
       .then(response => response.json())
       .then(data => {
         console.log("Successfull Post");
+        // alert("Thank you for your submission");
         this.resetFields();
       });
   };
@@ -97,17 +99,17 @@ class Review extends React.Component {
   }
 }
 
-//   return (
-//             <form className="review-form">
-//                 <textarea onChange={ (event)=>{ this.setState( title: event.target.value)}} className="title-input" type="text" name="title" placeholder="Enter Title Here"/>
-//                 <textarea onChange={ (event)=>{ this.setState( title: event.target.value)}} className="content-input" type="text" name="content" placeholder="What would you like to say?.."/>
-//                 <div className="submit">
-//                 <button type="submit" className="btn">Submit</button>
-//                 </div>
-//                 <div>
-//                 {this.state.error}
+// return (
+//           <form className="review-form">
+//               <textarea onChange={ (event)=>{ this.setState( title: event.target.value)}} className="title-input" type="text" name="title" placeholder="Enter Title Here"/>
+//               <textarea onChange={ (event)=>{ this.setState( title: event.target.value)}} className="content-input" type="text" name="content" placeholder="What would you like to say?.."/>
+//               <div className="submit">
+//               <button type="submit" className="btn">Submit</button>
+//               </div>
+//               <div>
+//               {this.state.error}
 
-//                 </div>
-//             </form>
+//               </div>
+//           </form>
 
 export default Review;

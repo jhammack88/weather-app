@@ -5,7 +5,7 @@ export default class DisplayReviews extends Component {
     super();
 
     this.state = {
-      reviewList: []
+      reviewList: [0]
     };
   }
 
@@ -15,6 +15,18 @@ export default class DisplayReviews extends Component {
   //     });
   //     console.log();
   //   };
+
+  handleShowReviewToggle = () => {
+    if (this.reviewList[0] !== 0) {
+      this.setState({
+        reviewList: []
+      });
+      console.log("toggle works");
+    } else {
+      this.getReviews();
+      console.log("toggle is false");
+    }
+  };
 
   getReviews = () => {
     fetch(`https://weather-backend2019.herokuapp.com/reviews`, {
@@ -26,41 +38,51 @@ export default class DisplayReviews extends Component {
         this.setState({
           reviewList: data
         });
-        console.log("hello", this.state.reviewList);
+        console.log(this.state.reviewList);
       });
-
-    //   .then(
-    //     response => response.json(),
-    //     this.setState({
-    //       reviewList: this.state.reviewList.response
-    //     }),
-    //     console.log(this.state.reviewList)
-    //   )
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
   };
+
+  renderReviews = () => {
+    return this.state.reviewList.map(item => {
+      return (
+        <div>
+          <h1>{item.title}</h1>
+          <h2>{item.content}</h2>
+        </div>
+      );
+    });
+  };
+
+  //   .then(
+  //     response => response.json(),
+  //     this.setState({
+  //       reviewList: this.state.reviewList.response
+  //     }),
+  //     console.log(this.state.reviewList)
+  //   )
+  //   .catch(error => {
+  //     console.log(error);
+  //   });
 
   //   console.log(reviewList)
 
   render() {
     return (
-      <div>
+      <div className="reviewfield">
         <h2>Your Reviews</h2>
         {/* <button className="btn" onSubmit={this.handleReviews}> */}
-        {/* <button className="btn" onClick={this.getReviews}>
+        <button className="btn" onClick={this.handleShowReviewToggle}>
           Reviews
-        </button> */}
-        {/* <textarea
+        </button>
+        <div
           type="text"
           value={this.state.reviewList}
           placeholder="reviewfield"
-        ></textarea> */}
-
-        {/* <div className="review-div"> */}
-        {/* hello */}
-        {/* {this.state.reviewList.filter(this.reviewList === "New Post")} */}
-        {/* </div> */}
+        ></div>{" "}
+        <div className="review-div">
+          {this.renderReviews()}
+          {/* {this.state.reviewList.this.reviewList === "New Post"} */}
+        </div>
       </div>
     );
   }

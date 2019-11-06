@@ -118,9 +118,10 @@
 }
 
 .review-div {
-  width: 100px;
-  height: 100px;
-  background-color: yellow;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  margin-bottom: 10px;
 }
 
 .weather-btn {
@@ -208,6 +209,12 @@ h2 {
 .option-select {
   margin: 0;
   padding: 0;
+}
+
+.reviewfield {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* 
