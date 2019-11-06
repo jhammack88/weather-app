@@ -37,7 +37,7 @@ class Review extends React.Component {
   // };
   handleChange = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      title: event.target.value
     });
   };
   addContent = event => {
@@ -51,15 +51,9 @@ class Review extends React.Component {
       })
     })
       .then(response => response.json())
-      .then(data =>
-        this.setState({
-          title: [
-            ...this.state.title,
-            { id: data.name, title: this.state.content }
-          ],
-          content: ""
-        })
-      );
+      .then(data => {
+        console.log("Successfull Post");
+      });
   };
 
   handleSubmit(event) {
@@ -67,51 +61,8 @@ class Review extends React.Component {
     this.addContent();
   }
 
-  // createCORSRequest = (method, url) => {
-  //   let xhr = new XMLHttpRequest();
-  //   if ("withCredentials" in xhr) {
-  //     // XHR for Chrome/Firefox/Opera/Safari.
-  //     xhr.open(method, url, true);
-  //   } else {
-  //     // CORS not supported.
-  //     xhr = null;
-  //   }
-  //   return xhr;
-  // };
-
-  // addContent() {
-  //   // event.preventDefault();
-  //   const url = "http://localhost:5000/review";
-  //   const xhr = this.createCORSRequest("POST", url);
-  //   if (!xhr) {
-  //     console.log("CORS not supported");
-  //     alert(
-  //       "There is a problem with our servers right now, please try again another time. We're sorry for the inconvenience"
-  //     );
-  //     return;
-  //   }
-  //   xhr.setRequestHeader("Content-type", "application/json");
-
-  //   // Response handlers.
-  //   xhr.onreadystatechange = function() {
-  //     if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-  //       console.log(xhr.response);
-  //     }
-  //   };
-  //   xhr.onerror = function() {
-  //     console.log(xhr.response);
-  //     // alert("Woops, there was an error making the request.");
-  //   };
-  //   xhr.send(
-  //     JSON.stringify({
-  //       title: this.state.title,
-  //       content: this.state.content
-  //     })
-  //   );
-  // }
-
   deleteContent = id => {
-    fetch(`https://localhost:5000/review/<id>`, {
+    fetch(`https://weather-backend2019.herokuapp.com/review/<id>`, {
       method: "DELETE"
     }).then(
       this.setState({
