@@ -1,4 +1,5 @@
 import React from "react";
+import DisplayReviews from "./display-reviews";
 
 class Review extends React.Component {
   constructor() {
@@ -10,36 +11,25 @@ class Review extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch("https://localhost:5000")
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       const loadedTitle = [];
-  //       for (const id in data) {
-  //         loadedTitle.push({ id, ...data[id] });
-  //       }
-  //       this.setState({ title: loadedTitle });
-  //     });
-  // }
+  resetFields = event => {
+    this.setState({
+      title: "",
+      content: ""
+    });
+  };
 
-  // renderTitle = () => {
-  //   return this.state.title.map(content => {
-  //     return (
-  //       <TodoItem
-  //         key={content.id}
-  //         title={content.title}
-  //         done={content.done}
-  //         id={content.id}
-  //         delete={this.deleteContent}
-  //       />
-  //     );
-  //   });
-  // };
-  handleChange = event => {
+  handleTitleChange = event => {
     this.setState({
       title: event.target.value
     });
   };
+
+  handleContentChange = event => {
+    this.setState({
+      content: event.target.value
+    });
+  };
+
   addContent = event => {
     // event.preventDefault();
     fetch("https://weather-backend2019.herokuapp.com/review", {
@@ -53,6 +43,7 @@ class Review extends React.Component {
       .then(response => response.json())
       .then(data => {
         console.log("Successfull Post");
+        this.resetFields();
       });
   };
 
@@ -73,32 +64,34 @@ class Review extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <h2>Leave your comments here!</h2>
-        <form className="form-container" onSubmit={e => this.handleSubmit(e)}>
-          <textarea
-            onChange={this.handleChange}
-            className="title-input"
-            type="text"
-            placeholder="Enter title here"
-            value={this.state.title}
-            name="title"
-          />
-          <textarea
-            onChange={this.handleChange}
-            className="content-input"
-            type="text"
-            placeholder="What would you like to say?.."
-            name="content"
-            value={this.state.content}
-          />
-          <button type="submit" className="btn">
-            Submit
-          </button>
-        </form>
-        {/* <div>
-                    {this.state.error}
-                </div> */}
+      <div className="write-reviews-container">
+        <div className="App">
+          <h2>Leave your comments here!</h2>
+          <form className="form-container" onSubmit={e => this.handleSubmit(e)}>
+            <textarea
+              onChange={this.handleTitleChange}
+              className="title-input"
+              type="text"
+              placeholder="Enter title here"
+              value={this.state.title}
+              name="title"
+            />
+            <textarea
+              onChange={this.handleContentChange}
+              className="content-input"
+              type="text"
+              placeholder="What would you like to say?.."
+              name="content"
+              value={this.state.content}
+            />
+            <button type="submit" className="btn">
+              Submit
+            </button>
+          </form>
+        </div>
+        <div className="reviews-container">
+          <DisplayReviews />
+        </div>
       </div>
     );
   }
